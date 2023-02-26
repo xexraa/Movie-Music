@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block head_content %} Review {% endblock %}
+
+{% block main_content %}
+<div class="edit">
+<div class="card" style="width: 32rem;">
+    <div class="card-body">
+        <h5 class="card-title">Review</h5>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ rate_form|bootstrap }}
+            <section class="end-edit">
+                <button type="submit" class="btn btn-success btn-edit">Save <i class="fa-regular fa-floppy-disk"></i></button>
+                <a href="#" class="btn btn-warning btn-edit" onclick="window.history.back()">Back <i class="fa-solid fa-backward-step"></i></a>
+            </section>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

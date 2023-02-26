@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block head_content %} Register {% endblock %}
+
+{% block main_content %}
+<div class="login">
+    <div class="fa-3x">      
+        <i class="fa-solid fa-heart fa-beat"></i>
+        <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s;"></i>
+        <i class="fa-solid fa-circle-plus fa-beat"></i>
+        <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 2s;"></i>
+        <i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i>
+    </div>
+    <div class="card" style="width: 26rem;">
+        <div class="card-body">
+            <h5 class="card-title">Register</h5>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <p>Already have an account? <a href="{% url 'login' %}">Log in here!</a></p>
+                <button type="submit" class="btn btn-dark">Register <i
+                        class="fa-sharp fa-solid fa-right-to-bracket"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn-dark {
+    margin-top: 10px;
+}
+
+.fa-3x {
+    margin-bottom: 15px;
+}
+</style>
+{% endblock %}

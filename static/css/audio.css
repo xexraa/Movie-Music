@@ -1,0 +1,37 @@
+.audio-player {
+    width: 100%;
+    max-width: 500px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .audio-player source {
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .audio-player::-webkit-media-controls-panel {
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .audio-player::-webkit-media-controls-play-button {
+    background-color: #333;
+    color: #f5f5f5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .audio-player::-webkit-media-controls-play-button:before {
+    content: "\25B6";
+    font-size: 20px;
+  }
+  

@@ -1,0 +1,54 @@
+.h5__full {
+font-size: 20px;
+text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.full {
+font-size: 16px;
+margin: 3px;
+
+}
+.full-review {
+font-size: 22px;
+margin: 0;
+padding: 0;
+}
+.col {
+margin-bottom: 0.5rem;
+}
+.comments {
+display: flex;
+justify-content: space-between;
+}
+.comment-link {
+text-decoration: none;
+background-color: #e6f2ff;
+padding: 0.5rem 0.5rem;
+color: black;
+font-weight: 400;
+border-radius: 8px 8px 8px 8px;
+}
+.messages {
+display: flex;
+background-color: green;
+justify-content: center;
+}
+.success {
+font-weight: bold;
+list-style: none;
+}
+.comment-container {
+margin: 1em 0;
+padding: 1em;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 2px 2px 5px #ddd;
+background-color: #fff;
+}
+
+.comment-container p {
+margin: 0 0 1em 0;
+}
+
+.rating {
+margin-top: 5px;
+}

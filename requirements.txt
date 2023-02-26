@@ -1,0 +1,6 @@
+django
+Pillow
+django-bootstrap-form
+pydub
+ffmpeg-python
+djangorestframework

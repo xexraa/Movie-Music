@@ -1,0 +1,168 @@
+
+body {
+    background-color: #e6f2ff;
+}
+
+.small-image {
+    width: 150px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.display-4 {
+    margin-bottom: 10px;
+    padding-left: 3rem;
+}
+
+.btn-sm {
+    margin-right: 3rem;
+    width: 7rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 1rem;
+}
+
+hr {
+    border-bottom: 2px solid black;
+}
+
+.btn-add {
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF512F, 0 0 70px #FF512F, 0 0 80px #FF512F, 0 0 100px #FF512F, 0 0 150px #FF512F;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 10rem;
+}
+
+.card {
+    max-width: 23%;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-size: 25px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+}
+
+.items {
+    justify-content: center;
+    align-items: center;
+    padding: auto 2rem;
+}
+
+.desc {
+    font-size: 20px;
+}
+
+.card-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+.col-2 {
+    padding-top: 30px;
+}
+
+.card-text {
+    font-size: 18px;
+}
+
+.link {
+    color: #337ab7;
+    text-decoration: none;
+    border-bottom: 2px solid #337ab7;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.link:hover {
+    border-bottom: 2px solid #23527c;
+  }
+
+.description {
+    margin: 10px auto;
+}
+
+.edit {
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;
+}
+
+.control-label {
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.actors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.list {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.end-edit {
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+.btn-edit {
+    margin: 1rem 1rem;
+}
+
+.star {
+    color: #ffd02a;
+    width: 1.5em;
+    height: 1.5em;
+    fill: none;
+}
+
+.star--filled {
+    fill: #ffd02a;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.page-container {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

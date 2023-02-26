@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block head_content %} Movie form {% endblock %}
+
+{% block main_content %}
+<div class="edit">
+<div class="card" style="width: 32rem; float: left; margin-right: 1rem;">
+    <div class="card-body">
+        {% if new %}
+        <h5 class="card-title">Add new movie:</h5>
+        {% else %}
+        <h5 class="card-title">Edit movie:</h5>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ movie_form|bootstrap }}
+            {{ extras_form|bootstrap }}
+            <section class="end-edit">
+                <button type="submit" class="btn btn-success btn-edit">Save <i class="fa-regular fa-floppy-disk"></i></button>
+                <a href="{% url 'all_movies' %}" class="btn btn-warning btn-edit">Back <i class="fa-solid fa-backward-step"></i></a>
+            </section>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

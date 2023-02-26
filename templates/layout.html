@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/023cc26ed9.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Public+Sans:400,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/audio.css' %}">
+        <link rel="stylesheet" href="{% static 'css/description.css' %}">
+        
+        
+
+        <title>{% block head_content %} {% endblock %}</title>       
+    </head>    
+    <body>
+        <div class="page-container">
+            {% block main_content %} {% endblock %}
+            <footer class="footer">
+                <small>Copyright &copy;2023. Movie&Music. All rights reserved.</small>
+            </footer>
+        </div>
+    </body>
+</html>

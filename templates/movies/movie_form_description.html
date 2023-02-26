@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% load custom_tags %}
+{% block head_content %} Movie description {% endblock %}
+
+{% block main_content %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="success"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<div class="edit">
+    <div class="card" style="width: 36rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>   
+            <div class="description">
+                <div class="description movie">
+                    <img src="/media/{{movie.img}}" class="media__image small-image">
+                    <section class="description items">
+                        <p class="desc">Premiere: {{movie.premiere}}</p>
+                        <p class="desc">Duration: {{movie.duration}} minutes.</p>
+                        {% if average_rating %}
+                        <p class="desc">Average user rating: {{average_rating|floatformat:"2"}}</p>
+                        {% endif %}
+                    </section>
+                </div>
+            </div>
+            <div class="description">
+                <section class="description items">
+                    <h5 class="h5 h5__full">Actors:</h5>
+                    {% for actor in actors%}
+                    <p class="full">{{actor.first_name}} {{actor.last_name}}</p>
+                    {% endfor %}
+                </section>
+                <div class="col">
+                    <h5 class="h5 h5__full">Description:</h5>
+                    <p class="card-text">{{ movie.description }}</p>
+                </div>
+                <section class="comments">
+                    <h5 class="h5 h5__full">Reviews:</h5>
+                    <p><a href="{% url 'review_movie' movie.id %}" class="comment-link">Add your comment here</a></p>
+               </section>
+                    {% for rate in rating %} 
+                      <div class="comment-container">
+                        <div class="rating">
+                            <div class="movie__rating">
+                                {% star "star" rate.stars %}
+                            </div>
+                            <div class="rating">
+                                {{rate.review}}
+                            </div>
+                        </div>
+                      </div>
+                    {% endfor %} 
+                    <section class="end-edit">
+                        <a href="{% url 'all_movies' %}" class="btn btn-warning btn-edit" >Back <i class="fa-solid fa-backward-step"></i></a>
+                    </section>                                                     
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

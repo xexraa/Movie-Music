@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% load custom_tags %}
+{% block head_content %} Song description {% endblock %}
+
+{% block main_content %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="success"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<div class="edit">
+    <div class="card" style="width: 36rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{music.title}}</h5>   
+            <div class="description">
+                <div class="description movie">
+                    <img src="/media/{{music.img}}" class="media__image small-image">
+                    <section class="description items">
+                        <p class="desc">Premiere: {{music.released}}</p>
+                        <p class="desc">Single by: {{music.single_by}}</p>
+                        {% for album in albums %}
+                            <p class="desc">From the album {{album.album_name}}</p>
+                        {% endfor %}
+                        <p class="desc">Genre: {{ genre }}</p>
+                        {% if average_rating %}
+                            <p class="desc">Average user rating: {{average_rating|floatformat:"2"}}</p>
+                        {% endif %}    
+                        {% if music.sample %}
+                        <audio controls>
+                            <source src="{{ music.sample.url }}" type="{{ music.sample.content_type }}">
+                        </audio>   
+                        {% endif %}                                  
+                    </section>
+                </div>
+            </div>
+            <div class="description">
+                <section class="description items">
+                    <h5 class="h5 h5__full">Artists:</h5>
+                    {% for artist in artists %}
+                    <p class="full">{{artist.first_name}} {{artist.last_name}}</p>
+                    {% endfor %}
+                </section>
+                <div class="col">
+                    <h5 class="h5 h5__full">Description:</h5>
+                    <p class="card-text">{{ music.description }}</p>
+                </div>
+                <section class="comments">
+                    <h5 class="h5 h5__full">Reviews:</h5>
+                    <p><a href="{% url 'review_song' music.id %}" class="comment-link">Add your comment here</a></p>
+               </section>
+                    {% for rate in rating %} 
+                      <div class="comment-container">
+                        <div class="rating">
+                            <div class="movie__rating">
+                                {% star "star" rate.stars %}
+                            </div>
+                            <div class="rating">
+                                {{rate.review}}
+                            </div>
+                        </div>
+                      </div>
+                    {% endfor %} 
+                    <section class="end-edit">
+                        <a href="{% url 'all_songs' %}" class="btn btn-warning btn-edit" >Back <i class="fa-solid fa-backward-step"></i></a>
+                    </section>                                                     
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
